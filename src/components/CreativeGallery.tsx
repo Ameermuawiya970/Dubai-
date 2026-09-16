@@ -3,13 +3,17 @@ import { Crown, MessageCircle, ShoppingBag, Eye, Sparkles, CheckCircle2 } from '
 import { motion } from 'motion/react';
 
 export const CreativeGallery: React.FC = () => {
-  const [creativeImgSrc, setCreativeImgSrc] = useState('/assets/dubai-zafrani-creative.png');
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+
+  const [creativeImgSrc, setCreativeImgSrc] = useState(`${baseUrl}assets/dubai-zafrani-creative.png`);
 
   const handleImageError = () => {
-    if (creativeImgSrc === '/assets/dubai-zafrani-creative.png') {
-      setCreativeImgSrc('/assets/dubai-zafrani-creative.svg');
+    if (creativeImgSrc.includes('dubai-zafrani-creative.png')) {
+      setCreativeImgSrc(`${baseUrl}assets/dubai-zafrani-creative.svg`);
     } else {
-      setCreativeImgSrc('/assets/dubai-zafrani-hero.png');
+      setCreativeImgSrc(`${baseUrl}assets/dubai-zafrani-hero.png`);
     }
   };
 

@@ -4,16 +4,20 @@ import { motion } from 'motion/react';
 
 export const HeroSection: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [imgSrc, setImgSrc] = useState('/assets/dubai-zafrani-hero.png');
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+
+  const [imgSrc, setImgSrc] = useState(`${baseUrl}assets/dubai-zafrani-hero.png`);
 
   const handleImageError = () => {
-    // Fallback chain to ensure image always renders under all hosting environments
-    if (imgSrc === '/assets/dubai-zafrani-hero.png') {
-      setImgSrc('/file_000000004cec81f4b1a52647af198d10.png');
-    } else if (imgSrc === '/file_000000004cec81f4b1a52647af198d10.png') {
-      setImgSrc('./assets/dubai-zafrani-hero.png');
+    // Fallback chain to ensure image always renders under all hosting environments and repo subpaths
+    if (imgSrc.includes('dubai-zafrani-hero.png')) {
+      setImgSrc(`${baseUrl}assets/dubai-zafrani-hero.svg`);
+    } else if (imgSrc.includes('dubai-zafrani-hero.svg')) {
+      setImgSrc(`${baseUrl}file_000000004cec81f4b1a52647af198d10.png`);
     } else {
-      setImgSrc('/assets/dubai-zafrani-hero.svg');
+      setImgSrc('./assets/dubai-zafrani-hero.png');
     }
   };
 
