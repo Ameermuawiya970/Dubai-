@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-purple: #2A0845;
+    --brand-purple-deep: #1A0329;
+    --brand-purple-light: #4A1575;
+    --brand-gold: #D4AF37;
+    --brand-gold-light: #F6E27A;
+    --brand-gold-dark: #AA771C;
+    --brand-cream: #FAF7F2;
+    --brand-saffron: #EA580C;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFE89E 0%, #D4AF37 50%, #996515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F3E0A0 0%, #D4AF37 50%, #B8860B 100%);
+}
+
+.purple-gradient-bg {
+  background: linear-gradient(145deg, #2A0845 0%, #170326 100%);
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, rgba(246,226,122,0.4) 50%, rgba(212,175,55,0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Dubai Zafrani Cream",
+  "description": "Premium luxury skincare landing page for Dubai Zafrani Cream featuring saffron-inspired skincare, Pakistani ad creative, and direct WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
